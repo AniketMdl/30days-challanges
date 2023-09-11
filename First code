@@ -1,0 +1,13 @@
+// Print addition of two numbers without using 3rd variable
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a, b;
+    cout << "Enter first number:" << endl;
+    cin >> a;
+    cout << "Enter second number:" << endl;
+    cin >> b;
+    cout << "--------------------" << endl;
+    cout << "Addition of two number :" <<" " <<a + b;
+}
