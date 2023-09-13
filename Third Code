@@ -1,0 +1,32 @@
+//Reverse the string without using any inbuilt function
+
+#include <iostream>
+#include <cstring>
+
+void reverseString(char str[], int length) {
+    int start = 0;
+    int end = length - 1;
+
+    while (start < end) {
+        
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char str[] = "Hi! This is Aniket Mandal";
+    int length = std::strlen(str); 
+    std::cout << "Original String: " << str << std::endl;
+
+    
+    reverseString(str, length);
+
+    std::cout << "Reversed String: " << str << std::endl;
+
+    return 0;
+}
