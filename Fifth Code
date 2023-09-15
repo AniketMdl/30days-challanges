@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#include <climits> // Include this header for INT_MIN
+
+int main() {
+    std::vector<int> arr;
+    int n;
+    
+    // Input the size of the array
+    std::cout << "Enter the number of elements: ";
+    std::cin >> n;
+    
+    // Input the elements of the array
+    std::cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < n; i++) {
+        int element;
+        std::cin >> element;
+        arr.push_back(element);
+    }
+
+    // Initialize variables to keep track of the largest and second largest elements
+    int largest = arr[0];
+    int secondLargest = INT_MIN; // Initialize to the minimum possible value
+
+    // Traverse the array to find the largest and second largest elements
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    // Check if a second largest element was found
+    if (secondLargest == INT_MIN) {
+        std::cout << "There is no second largest element.\n";
+    } else {
+        std::cout << "The second largest element is: " << secondLargest << std::endl;
+    }
+
+    return 0;
+}
